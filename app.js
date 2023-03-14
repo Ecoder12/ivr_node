@@ -1,22 +1,13 @@
 const express = require('express');
 const mysql = require('mysql');
 
-const cors = require('cors');  // <-- Add this line
+
 
 const app = express();
-app.use((req, res, next) => {
-res.header("Access-Control-Allow-Origin: *");
-res.header("Access-Control-Allow-Credentials: true");
-res.header("Access-Control-Max-Age: 1000");
-res.header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Cache-Control, Pragma, Authorization, Accept, Accept-Encoding");
-res.header("Access-Control-Allow-Methods: PUT, POST, GET, OPTIONS, DELETE");
-  next();
-});
+
 
 // Use CORS middleware
-app.use(cors({
-  origin: 'http://3.6.200.239/'
-}));
+
 const connection = mysql.createConnection({
   host: 'nanoshel.cuzlniri5zxa.ap-south-1.rds.amazonaws.com',
   user: 'root',
