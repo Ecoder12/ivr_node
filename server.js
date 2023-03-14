@@ -34,7 +34,7 @@ connection.connect((err) => {
 
 app.use(express.json());
 
-app.post('/insert-data', (req, res) => {
+app.get('/insert-data', (req, res) => {
   const data = req.body;
 
   connection.query('INSERT INTO ivr_response SET ?', data, (error, results, fields) => {
